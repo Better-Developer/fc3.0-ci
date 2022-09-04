@@ -1,0 +1,12 @@
+name: ci-golang-workflow
+on: [push]
+jobs:
+  checks-applicatio:
+   runs-on: ubuntu-latest
+   steps:
+    - uses: actions/checkout@v2
+    - uses: action/setup-go@v2
+      with:
+       go-version: 1.15
+    - run: go test ./goapp/
+    - run: go run ./goapp/sum.go
