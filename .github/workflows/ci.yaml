@@ -11,5 +11,5 @@ jobs:
     - uses: actions/setup-go@v2
       with:
        go-version: 1.15
-    - run: go test ./goapp/sum_test.go
+    - run: go test main -run ./goapp/sum_test.go
     - run: go run ./goapp/sum.go
